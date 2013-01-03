@@ -1,0 +1,78 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Javascriptコメントテスト</title></head>
+<body>
+	<div id="header">
+		<h2>Javascriptコメントテスト</h2>
+		<p>背景緑が読み込みOK！
+		詳細はjavascriptエラーが出てるかどうか確認してぬ！
+		</p>
+	</div>
+	<div id="main">
+<div id ="00" style="background-color: red;">
+	00正しいコメント.js<pre>
+	//ラインコメント
+	/*
+		ブロックコメント
+	*/
+</pre></div>
+<div id ="01" style="background-color: red;">
+	01ブロックコメント入れ子はダメ.js<pre>
+	/* /* 入れ子は途中で切れる */ */
+</pre></div>		
+<div id ="02" style="background-color: red;">
+	02ブロックコメント内に正規表現はダメ.js<pre>
+	/* 正規表現途中でコメントアウトが途切れる
+	var regexp = (/.*/);
+	*/
+</pre></div>
+<div id ="03" style="background-color: red;">
+	03文字列途中にブロックコメントのケツはダメ01.js<pre>
+	/* 
+	var strHoge = "hoge.*/";
+	*/
+</pre></div>
+<div id ="04" style="background-color: red;">
+	04文字列途中にブロックコメントのケツはダメ02.js<pre>
+	/* 
+	var strHoge = 'hoge.*/';
+	*/
+</pre></div>
+<div id ="05" style="background-color: red;">
+	05文字列途中にコメント頭はダメじゃない.js<pre>
+	/* 
+	var strHoge = "/*hoge";
+	*/
+	/* 
+	var strHoge = '//hoge';
+	*/
+</pre></div>
+<div id ="06" style="background-color: red;">
+	06行コメント内にブロックコードは無視される01.js<pre>
+	///* 
+	*/
+</pre></div>
+<div id ="07" style="background-color: red;">
+	07行コメント内にブロックコードは無視される02.js<pre>
+	//* 
+	*/
+</pre></div>
+<div id ="08" style="background-color: red;">
+	08ブロックコード内に行コメントはダメじゃない.js<pre>
+	/* hoge//hogeコメント
+	*/
+</pre></div>
+</div>
+<script src="00正しいコメント.js"></script>
+<script src="01ブロックコメント入れ子はダメ.js"></script>
+<script src="02ブロックコメント内に正規表現はダメ.js"></script>
+<script src="03文字列途中にブロックコメントのケツはダメ01.js"></script>
+<script src="04文字列途中にブロックコメントのケツはダメ02.js"></script>
+<script src="05文字列途中にコメント頭はダメじゃない.js"></script>
+<script src="06行コメント内にブロックコードは無視される01.js"></script>
+<script src="07行コメント内にブロックコードは無視される02.js"></script>
+<script src="08ブロックコード内に行コメントはダメじゃない.js"></script>
+</body>
+</html>
